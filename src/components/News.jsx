@@ -106,6 +106,13 @@ const News = () => {
         'The Golden Globes will be a "private" affair this year.\r\nQuestions about the glitzy award ceremony have swirled since NBC announced that it would not air the awards in light of the Hollywood Foreign … [+2104 chars]',
     },
   ];
+  async componentDidMount(){
+      let apiurl = "https://newsapi.org/v2/everything?q=tesla&from=2021-12-08&sortBy=publishedAt&apiKey=cd2832b96ac6446fb725bc5a0630c4dc";
+      let data = await fetch(apiurl);
+      let parseData = await data.json()
+      console.log(parseData);
+
+  };
   const [articles, setArticles] = React.useState(article);
   return (
     <div div className="container">
